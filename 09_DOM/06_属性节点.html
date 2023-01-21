@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input class="a" type="text" name="username" value="admin">
+    <script>
+        //const input = document.getElementsByName("username")[0]
+        const input = document.querySelector("[name=username]")
+        // console.log(input.type);
+        // console.log(input.getAttribute("type"));
+        input.setAttribute("value", "Z3r0")
+    </script>
+</body>
+</html>

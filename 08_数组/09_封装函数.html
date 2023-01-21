@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // const arr = [5,3,7,9,4,6,8,1,9,2]
+        // const arr1 = [8,6,4,3,9,5,7,2,1,6]
+        // function sort(array){
+        //     const arr = [...array]
+        //     for(let i=0;i<arr.length;i++){
+        //         for(let j=0;j<arr.length-i-1;j++){
+        //             if(arr[j]>arr[j+1]){
+        //                 let t = arr[j]
+        //                 arr[j] = arr[j+1]
+        //                 arr[j+1] = t
+        //             }
+        //         }
+        //     }
+        //     return arr
+        // }
+        // let result = sort(arr)
+        // console.log(arr);
+        // console.log(result);
+        class Person{
+            constructor(name, age){
+                this.name = name
+                this.age = age
+            }
+        }
+        const personArr = [
+            new Person("Z3r0", 999),
+            new Person("Max", 78),
+            new Person("X",17),
+        ]
+        function filter(arr,cb) {
+            const newArr = []
+            // cb()
+            for(let i = 0; i<personArr.length; i++){
+                // if(personArr[i].age >= 18){
+                //     console.log(personArr[i]);
+                // }
+                if(cb()){
+                    newArr.push(arr[i])
+                }
+            }
+            return newArr
+        }
+        function fn(){
+            return true
+        }
+        result = filter(personArr,fn)
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

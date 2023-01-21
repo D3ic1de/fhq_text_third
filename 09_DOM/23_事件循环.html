@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <button id="btn">点我一下</button>
+    <button id="btn2">再点我一下</button>
+    <script>
+        function fn(){
+            let a = 10
+            let b = 20
+            function fn2() {
+                console.log("fn2");
+            }
+            fn2()
+            console.log("fn~");
+        }
+        fn()
+        const btn = document.getElementById("btn")
+        const btn2 = document.getElementById("btn2")
+        btn.onclick = function(){
+            alert("嗯♂啊~");
+            const begin = Date.now()
+            while(Date.now() - begin < 3000){}
+        }
+        btn2.onclick = function(){
+            alert("哟西，你滴，大大滴良民")
+        }
+    </script>
+</body>
+</html>

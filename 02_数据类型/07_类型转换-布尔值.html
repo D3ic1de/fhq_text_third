@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>类型转换-布尔值</title>
+    <script>
+        let  a = 1 // true
+        a = -1 // true
+        a = 0 //false
+        a = NaN //false
+        a = Infinity // true
+
+        a = 'true'  // true
+        a = 'false' // true
+        a = " " //true
+        a = '' //false
+        console.log(typeof a, a)
+        a = Boolean(a)
+        console.log(typeof a, a)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

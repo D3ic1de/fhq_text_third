@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        class Person{
+            //#address = "China"
+
+            #name
+            #age
+            #gender
+
+            constructor(name, age, gender) {
+                this.#name = name
+                this.#age = age
+                this.#gender = gender
+            }
+            sayHello(){
+                console.log(this.#name)
+            }
+            getName(){
+                return this.#name
+            }
+            setName(name){
+                this.#name = name
+            }
+            getAge(){
+                return this.#age
+            }
+            setAge(age){
+                if(age >= 0){
+                    this.#age = age
+                }
+            }
+            get gender(){
+                return this.#gender
+            }
+            set gender(gender){
+                this.#gender = gender
+            }
+        }
+        const hacker = new Person("Z3r0", Infinity, "未知")
+        console.log(hacker)
+        hacker.setName("F4tez3r0")
+        hacker.getName()
+        hacker.gender = "男"
+        console.log(hacker.gender)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

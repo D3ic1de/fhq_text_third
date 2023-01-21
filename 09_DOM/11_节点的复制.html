@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn01">点我一下</button>
+    <ul id="list1">
+        <li id="l1">Z3r0</li>
+        <li id="l2">Max</li>
+        <li id="l3">TiGa</li>
+    </ul>
+    <ul id="list2">
+        <li>Seven</li>
+    </ul>
+    <script>
+        /*点击按钮后，将id为li的元素添加到list2中*/
+        const list2 = document.getElementById("list2")
+        const l1 = document.getElementById("l1")
+        const btn01 = document.getElementById("btn01")
+        btn01.onclick = function(){
+            const newL1 = l1.cloneNode(true)
+            newL1.id = "newL1"
+            list2.appendChild(newL1)
+        }
+    </script>
+</body>
+</html>

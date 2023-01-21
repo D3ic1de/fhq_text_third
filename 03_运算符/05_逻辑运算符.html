@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>逻辑运算符</title>
+    <script>
+        let a = true
+        a = !a
+        //console.log(a)
+        a = 123
+        a = !!a
+        //console.log(typeof a, a)
+
+        //true && alert(1) //第一个值为true，alert会执行
+        //false && alert(1) //第一个值为false，alert不会运行
+        let result1 = true
+        result1 = 1 && 2 // 2
+        result1 = 1 && 0 // 0
+        result1 = 0 && NaN //0
+        result1 = NaN && 1 // NaN
+        console.log(result1)
+        //true || alert(1)
+        //false || alert(1)
+        let result2 = true
+        result2 = 0 || 12 // 12
+        result2 = 0 || null // null
+        console.log(result2)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

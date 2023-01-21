@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function fn() {
+            console.log("fn -->", this)
+        }
+        const fn1 = () => {
+            console.log("fn1 -->", this)   //总是window
+        }
+        /*fn()  //window
+        fn1() //window*/
+        const obj = {
+            name:"Z3r0",
+            fn,
+            fn1,
+            sayHello(){
+                console.log(this.name)
+                /*function t(){
+                    console.log("t -->",this)
+                }
+                t()*/
+                const t1 = () =>{
+                    console.log("t1 -->",this)
+                }
+                t1()
+            }
+        }
+        obj.fn()  //obj
+        obj.fn1() //window
+
+        obj.sayHello()
+    </script>
+</head>
+<body>
+
+</body>
+</html>

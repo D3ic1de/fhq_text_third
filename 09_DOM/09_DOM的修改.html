@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn01">按钮1</button>
+    <button id="btn02">按钮2</button>
+    <hr />
+    <ul id="list">
+        <li id="hack">Z3r0</li>
+        <li id="cook">F4te</li>
+        <li id="musician">Chaos</li>
+    </ul>
+    <script>
+        const btn01 = document.getElementById("btn01")
+        btn01.onclick = function(){
+            const li = document.createElement("li")
+            li.textContent = "Tiga"
+            li.id = "迪迦"
+            // list.appendChild(li)
+            list.insertAdjacentHTML("beforeend","<li id='特利迦'>Trigger</li>")
+        }
+        const btn02 = document.getElementById("btn02")
+        btn02.onclick = function(){
+            const li = document.createElement("li")
+            li.id = "艾克斯"
+            li.textContent="X"
+            const cook = document.getElementById("cook")
+            //cook.replaceWith(li)
+            cook.remove()
+        }
+    </script>
+</body>
+</html>

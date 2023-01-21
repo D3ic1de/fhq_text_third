@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>类型转换-数值</title>
+    <script>
+        let a = '123' // 123
+        a = 'abc'  // NaN
+        a = '3.1415926' // 3.1415926
+        a = '11px'  //  NaN
+        a = '' // 0
+        a = '   ' // 0
+        a = true // 1
+        //console.log(typeof a, a)
+
+        a = Number(a)
+        //console.log(typeof a, a)
+
+        let b = '123p2x' // 123
+        b = 456.123 // 456
+        console.log(typeof b, b)
+        b = parseInt(b)
+        console.log(typeof b, b)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

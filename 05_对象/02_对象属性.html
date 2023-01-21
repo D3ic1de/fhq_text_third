@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象属性</title>
+    <script>
+        let a = Object()
+        a.name = "Z3r0"
+        //a.["sss15"] = 666
+
+        /*let mySymbol = Symbol()
+        a[mySymbol] = "通过symbol添加的属性"
+        console.log(a[mySymbol])*/
+        a.age = Infinity
+        a["gender"] = "未知"
+        let str = "address"
+        a[str] = "虚空"
+        console.log(a.gender)
+        console.log(a["gender"])
+        console.log(a[str])
+        console.log(a)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

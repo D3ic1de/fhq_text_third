@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*class Person{
+            name = "Z3r0"
+            age = Infinity
+            gender = "未知"
+            sayHello(){
+                console.log(this.name)
+            }
+        }
+        const hacker = new Person()
+        const cook = new Person()
+        const musician = new Person()
+        console.log(hacker)
+        console.log(cook)
+        console.log(musician)*/
+        class Person{
+            name
+            age
+            gender
+            constructor(name, age, gender) {
+                /*console.log("构造函数执行了", name, age, gender)*/
+                this.name = name
+                this.age = age
+                this.gender = gender
+            }
+        }
+        const hacker = new Person("Z3r0", Infinity, "未知")
+        const cook = new Person("Js0n", 30, "男")
+        console.log(hacker)
+        console.log(cook)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

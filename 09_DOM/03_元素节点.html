@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点我一哈</button>
+    <span class="s1">我是span</span>
+    <span class="s1">我是span</span>
+    <span class="s1">我是span</span>
+    <span class="s1">我是span</span>
+    <span class="s1">我是span</span>
+    <div>我是div</div>
+    <div>我是div</div>
+    <div>我是div</div>
+    <div>我是div</div>
+    <div>我是div</div>
+    <form>
+        <input type="text" name="username">
+        <input type="radio" name="gender" value="male"> 男
+        <input type="radio" name="gender" value="female"> 女
+    </form>
+    <script>
+        console.log(document.body);
+        const btn = document.getElementById("btn")
+        console.log(btn);
+        const spans = document.getElementsByClassName("s1")
+        console.log(spans);
+        // for(let i=0; i<spans.length;i++){
+        //     spans[i].innerText = "hhh"+i
+        // }
+        const divs = document.getElementsByTagName("div")
+        console.log(divs);
+        const genderInput = document.getElementsByName("gender")
+        console.log(genderInput);
+        const divs1 = document.querySelectorAll("div")
+        console.log(divs1);
+        const div = document.querySelector("div")
+        console.log(div)
+        const h2 = document.createElement("h2")
+        console.log(h2);
+    </script>
+</body>
+</html>

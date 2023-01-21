@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #main{
+            height: 420px;
+            width: 360px;
+            border: 10px yellowgreen solid;
+            background-color: yellow;
+            border-radius: 20px;
+            margin: 50px auto;
+        }
+
+        #stage{
+            height: 304px;
+            width: 304px;
+            border: 2px solid orange;
+            margin: 15px auto;
+            position: relative;
+        }
+
+        #snake > div{
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            position: absolute;
+            border: 1px solid orange;
+            top: 120px;
+            left: 120px;
+        }
+
+        #food{
+            width: 10px;
+            height: 10px;
+            background-color: orangered;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            display: flex;
+            flex-flow: wrap;
+        }
+
+        #food > div{
+            width: 5px;
+            height: 5px;
+            background-color: orangered;
+            transform: rotate(45deg);
+        }
+
+        #info{
+            width: 304px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            font: bold 20px courier;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="stage">
+
+            <div id="snake">
+                <div></div>
+                
+            </div>
+
+            <div id="food">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+        </div>
+
+        <div id="info">
+            <div>SCORE:<span id="score">0</span></div>
+            <div>LEVEL:<span id="level">1</span></div>
+        </div>
+    </div>
+    <script>
+        const snake = document.getElementById("snake")
+        //获取蛇的各个部分
+        const snakes = snake.getElementsByTagName("div")
+
+        
+        //获取食物
+        const food = document.getElementById("food")
+
+        //获取分数和level的span
+        const scoreSpan = document.getElementById("score")
+        const levelSpan = document.getElementById("level")
+
+        //创建变量存储分数和等级
+        let score = 0
+        let level = 1
+
+        function changeFood(){
+            //生成0~29之间的随机数
+            const x = Math.floor(Math.random() * 30) * 10
+            const y = Math.floor(Math.random() * 30) * 10
+            //设置食物坐标
+            food.style.left = x + "px"
+            food.style.top = y + "px"
+        }
+        
+        changeFood()
+        
+        
+        /*
+            绑定按键属性keydown keyup
+            键盘事件只能绑定给可以获取焦点的元素或者是document
+        */
+        //定义一个变量用来存储蛇的移动的方向
+        let dir
+        //创建一个变量来记录按键的状态
+        let keyActive = true
+        const keyArr = ["W", "S", "A", "D","w", "s", "a", "d", "ArrowDown", "ArrowUp", "ArrowLeft", "ArrowRight"]
+        const reObj = {
+            "W": "S",
+            "S": "W",
+            "A": "D",
+            "D": "A",
+            "w": "s",
+            "s": "w",
+            "a": "d",
+            "d": "a",
+            "ArrowDown": "ArrowUp",
+            "ArrowUp": "ArrowDown",
+            "ArrowLeft":"ArrowRight",
+            "ArrowRight": "ArrowLeft",
+        }
+        document.addEventListener("keydown", (event) =>{
+            
+            /*通过事件对象可以获取到用户按的是哪个按键*/
+            if(keyActive && keyArr.includes(event.key)){
+                if(snakes.length < 2 || reObj[dir] !== event.key){
+                    //设置方向
+                    dir = event.key
+                    keyActive = false
+                }
+            }
+        })
+
+        /*
+            要使身体可以和头一起移动，只需要在蛇移动时，变化蛇尾巴的位置
+        */
+
+
+        setTimeout(function move(){
+            
+            // 获取蛇头
+            const head = snakes[0]
+            // 获取蛇头坐标
+            let x = head.offsetLeft
+            let y = head.offsetTop
+            if(dir === "ArrowUp" || dir === "W" || dir === "w"){
+                y -= 10
+            }else if(dir === "ArrowDown" || dir === "S" || dir === "s"){
+                y += 10
+            }else if(dir === "ArrowLeft" || dir === "A" || dir === "a"){
+                x -= 10
+            }else if(dir === "ArrowRight" || dir === "D" || dir === "d"){
+                //console.log("→");
+                //向右移动
+                x += 10
+            }
+            //检查蛇是否吃到食物
+            if(head.offsetTop === food.offsetTop && head.offsetLeft === food.offsetLeft){
+                //改变食物的位置
+                changeFood()
+                //增加蛇的身体
+                snake.insertAdjacentHTML("beforeend", "<div/>")
+                score++
+                scoreSpan.textContent = score
+                if(score % 3 === 0 && level < 18){
+                    level++
+                    levelSpan.textContent = level
+                }
+            }
+            /*
+                判断游戏是否结束
+            */
+            //判断是否撞墙
+            if(x < 0 || x > 290 || y < 0 || y > 290){
+                //游戏结束
+                alert("Game Over")
+                return
+            }
+            if(dir){
+                //判断是否装到自己
+                for(let i=0;i<snakes.length - 1;i++){
+                    if(snakes[i].offsetLeft === x && snakes[i].offsetTop === y){
+                        alert("Game Over")
+                        return
+                    }
+                }
+            }
+            //获取尾巴
+            const tail = snakes[snakes.length - 1]
+            //移动蛇的位置
+            tail.style.left = x + "px"
+            tail.style.top = y + "px"
+            //将尾巴移动到蛇头的位置
+            snake.insertAdjacentElement("afterbegin", tail)
+            keyActive = true
+            setTimeout(move, 300 - level*15)
+        }, 300)
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>break和continue</title>
+    <script>
+        /*for(let i = 0;i < 5;i++){
+            for(let j = 0;j < 5;j++){
+                if(j === 1){
+                    break
+                }
+                console.log("内层循环--->",j)
+            }
+            console.log(i)
+        }*/
+        /*for(let i = 0;i < 5;i++){
+            if(i === 3)continue
+            console.log(i)
+        }*/
+        for(let i = 0;i < 5;i++){
+            for(let j = 0;j < 5;j++){
+                if(j === 1)continue
+                console.log("内层循环--->",j)
+            }
+            console.log(i)
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

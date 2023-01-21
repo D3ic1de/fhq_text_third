@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Person{
+            name = "Z3r0"
+            age = 18
+            sayHello() {
+                console.log("Hello,我是",this.name)
+            }
+        }
+
+        class Dog {
+
+        }
+        const p = new Person()
+        const p1 = new Person()
+        
+        // p.__proto__.run = () => {
+        //     console.log('爷们跑起来了')
+        // }
+        // p.__proto__ = new Dog()
+        // console.log(p);
+        // console.log(p1);
+        //console.log(Person.prototype === p.__proto__);
+        Person.prototype.fly = () => {
+            console.log("爷们在飞~");
+        }
+        p.fly()
+        p1.fly()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

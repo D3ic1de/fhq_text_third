@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Animal{
+            constructor(name){
+                this.name = name
+            }
+            sayHello(){
+                console.log("动物在叫~")
+            }
+        }
+        class Dog extends Animal{
+            sayHello(){
+                console.log("汪汪汪");
+            }
+        }
+        class Cat extends Animal{
+            constructor(name, age){
+                super(name)
+                this.age = age
+
+            }
+            sayHello(){
+                super.sayHello()
+                console.log("喵喵喵");
+            }
+        }
+        const dog = new Dog("旺财")
+        const cat = new Cat("Tom",3)
+        dog.sayHello()
+        console.log(dog);
+        cat.sayHello()
+        console.log(cat);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

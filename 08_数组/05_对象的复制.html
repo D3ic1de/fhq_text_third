@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const arr = ["one", "two", "three", "four",]
+        const arr1 = arr.slice()
+        const arr2 = ["Z3r0",...arr,"F4te"]
+        function sum(a, b, c){
+            return a + b + c
+        }
+        const arr3 = [10, 11, 12]
+        let result = sum(...arr3)
+        //console.log(result);
+        const obj = {name:"Z3r0", age:18}
+        //const obj1 = Object.assign({}, obj)
+        const obj1 = {}
+        Object.assign(obj1, obj)
+        //console.log(obj1);
+        const obj2 = {...obj}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

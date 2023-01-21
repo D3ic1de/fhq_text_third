@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function fn(){
+            console.log(this)
+        }
+        const obj = {name:"Z3r0"}
+        obj.text = fn
+        const obj1 = {name:"F4te",text:fn}
+        obj.text()
+        obj1.text()
+        const obj2 = {
+            name:"F4teZ3r0",
+            sayHello:function(){
+                console.log(this.name)
+            },
+        }
+        const obj3 = {
+            name:"D3ic1de",
+            ayHello:function(){
+                console.log(this.name)
+            },
+        }
+        obj2.sayHello()
+        obj3.ayHello()
+    </script>
+</head>
+<body>
+
+</body>
+</html>
